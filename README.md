@@ -11,6 +11,8 @@ plan for this assignment
 
     when finished, it should allow you to recreate the sounds of sitting in a forest. i hope the project will be able to create a relaxing and peaceful atmosphere.
 
+    i've grabbed some inspirational pictures of forests, i plan on making a cute scene in adobe illustrator and ive included an example (example-pexels-bruno-glastch.jpg)
+
 Rubric
 
 SUBMISSION REQUIREMENTS & DUE DATE
