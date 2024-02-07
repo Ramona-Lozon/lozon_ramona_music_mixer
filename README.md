@@ -16,7 +16,7 @@ plan for this assignment
 Rubric
 
 SUBMISSION REQUIREMENTS & DUE DATE
-Project must be submiZed within Week 6 class >me: ONLY THE MAIN BRANCH WILL BE GRADED.NOT ZIPPED FILES! - Github repo: readme.md file, master branch, design branch and development branch
+Project must be submitted within Week 6 class >me: ONLY THE MAIN BRANCH WILL BE GRADED.NOT ZIPPED FILES! - Github repo: readme.md file, master branch, design branch and development branch
 - Correct structure for a web project (css, js, images and index.html)
 - Submit Dev notes, research, visuals, audio files, etc, to the FOL Dropbox 
 - check in February 7th
