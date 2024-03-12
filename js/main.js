@@ -8,7 +8,14 @@ let soundIcons = document.querySelectorAll('.sound_icon'),
 const resetButton = document.getElementById('resetButton');
 const iconPanel = document.getElementById('icon_panel');
 
-// Functions
+// Audio Query Selectors
+playButton = document.querySelector('#playButton'),
+pauseButton = document.querySelector('#pauseButton'),
+rewindButton = document.querySelector('#rewindButton'),
+volSlider = document.querySelector('#volumeControl'),
+volAmount = document.querySelector('#volumeAmt');
+
+// Drag and Drop Functions!!! :D
 
 // drag item function
 function handleStartDrag() { 
@@ -57,6 +64,33 @@ function resetImages() {
         iconPanel.appendChild(icon);
     });
 }
+
+// music finctions!!! :D
+
+function playAudio() {
+    dropZoneAudio.play();
+}
+function restartAudio() {
+    dropZoneAudio.currentTime = 0;
+    playAudio();
+}
+function pauseAudio() {
+    dropZoneAudio.pause();
+}
+
+function displayVolume() {
+    volAmount.innerText = volSlider.value;
+}
+
+displayVolume();
+
+function setVolume() {
+    console.log(this.value);
+    dropZoneAudio.volume = this.value / 100;
+    // need to debug this so that the input slider matches the volume output
+    displayVolume();
+}
+
 // event listeners!!!
 
 // drag item event listener
@@ -70,4 +104,16 @@ dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
 
 // Event listener for reset button
 resetButton.addEventListener('click', resetImages);
+
+//play button event listener
+playButton.addEventListener('click', playAudio);
+
+//rewind button event listener
+rewindButton.addEventListener('click', restartAudio);
+
+//pause button event listener
+pauseButton.addEventListener('click', pauseAudio);
+
+//volume slider event listener
+volSlider.addEventListener('input', setVolume);
 
