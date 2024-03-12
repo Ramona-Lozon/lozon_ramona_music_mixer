@@ -9,7 +9,8 @@ const resetButton = document.getElementById('resetButton');
 const iconPanel = document.getElementById('icon_panel');
 
 // Audio Query Selectors
-playButton = document.querySelector('#playButton'),
+const playButton = document.getElementById('playButton');
+// playButton = document.querySelector('#playButton'),
 pauseButton = document.querySelector('#pauseButton'),
 rewindButton = document.querySelector('#rewindButton'),
 volSlider = document.querySelector('#volumeControl'),
@@ -67,9 +68,23 @@ function resetImages() {
 
 // music finctions!!! :D
 
+// Function to play audio
 function playAudio() {
-    dropZoneAudio.play();
+    const droppedImage = document.querySelector('.drop_zone img');
+    if (droppedImage) {
+        const trackRef = droppedImage.getAttribute('data-trackref');
+        if (trackRef) {
+            const audioSrc = `assets/sounds/${trackRef}`;
+            const audio = new Audio(audioSrc);
+            audio.play();
+        } else {
+            console.error('Data-trackref attribute is missing or empty.');
+        }
+    } else {
+        console.error('No image dropped in the drop zone.');
+    }
 }
+
 function restartAudio() {
     dropZoneAudio.currentTime = 0;
     playAudio();
@@ -116,4 +131,3 @@ pauseButton.addEventListener('click', pauseAudio);
 
 //volume slider event listener
 volSlider.addEventListener('input', setVolume);
-
