@@ -20,14 +20,28 @@ draggedIcon;
     }
 
 // drop item in container function
-    function handleDrop(e) { 
-        e.preventDefault();
-        console.log('dropped something on me');
-//   bug fix required??
-if(!this.querySelector('img'))this.appendChild(draggedIcon);
-        this.appendChild(draggedPiece);
-    }
+function handleDrop(e) { 
+    e.preventDefault();
+    console.log('dropped something on me');
 
+    // If there is no image already in the drop zone
+    if (!this.querySelector('img')) {
+        // Clone the dragged icon
+        const clonedIcon = draggedIcon.cloneNode(true);
+        // Remove the original icon from the icon panel
+        draggedIcon.parentNode.removeChild(draggedIcon);
+        // Append the cloned icon to the drop zone
+        this.appendChild(clonedIcon);
+    } else {
+        // If there is already an image in the drop zone, replace it with the dragged icon
+        const existingIcon = this.querySelector('img');
+        // Remove the existing icon from the drop zone
+        existingIcon.parentNode.removeChild(existingIcon);
+        // Append the dragged icon to the drop zone
+        this.appendChild(draggedIcon);
+    }
+}
+    
 // event listeners!!!
 
 // drag item event listener
