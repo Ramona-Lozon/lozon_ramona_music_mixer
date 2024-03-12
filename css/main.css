@@ -2,3 +2,34 @@
     display: none;
 }
 
+.sound_icon {
+    width: 150px;
+}
+
+body {
+    background-image:url(../images/background.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sound_icon {
+    width: 150px;
+    margin: 10px;
+}
+
+#drop_zones .drop_zone {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border:5px solid black;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.audio-controls {
+    margin-top: 20px;
+display: inline-block;
+justify-content: center;
+}

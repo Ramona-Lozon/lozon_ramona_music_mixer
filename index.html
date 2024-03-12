@@ -6,7 +6,45 @@
     <link href="css/main.css" rel="stylesheet">
     <title>Music Mixer</title>
 </head>
-    <body>
+<body>
 
-    </body>
+    <!-- sound icons -->
+    <section id="sound_icons">
+        <h1 class="hidden">Sound icons</h1>
+        <img src="images/crickets-icon.png" class="sound_icon" alt="cricket sound icon">
+        <img src="images/fire-icon.png" class="sound_icon" alt="fire sound icon">
+        <img src="images/frog-icon.png" class="sound_icon" alt="frog sound icon">
+        <img src="images/rainwater-icon.png" class="sound_icon" alt="rainwater sound icon">
+        <img src="images/stream-icon.png" class="sound_icon" alt="stream sound icon">
+        <img src="images/wind-icon.png" class="sound_icon" alt="wind sound icon">
+    </section>
+
+    <!-- Drop zones -->
+    <section id="drop_zones">
+        <h1 class="hidden">Drop zone</h1>
+        <div class="drop_zone" id="dz1"></div>
+        <div class="drop_zone" id="dz2"></div>
+        <div class="drop_zone" id="dz3"></div>
+        <div class="drop_zone" id="dz4"></div>
+        <div class="drop_zone" id="dz5"></div>
+        <div class="drop_zone" id="dz6"></div>
+    </section>
+
+    <!-- audio controls -->
+    <section class="audio-controls">
+        <h1 class="hidden">Audio Controls</h1>
+        <button id="playButton">PLAY</button>
+        <button id="pauseButton">PAUSE</button>
+        <button id="rewindButton">REWIND</button>
+        
+        <div id="volumeAmt"></div>
+        <input
+        id="volumeControl"
+        type="range"
+        min="0"
+        max="100"
+        step="1">
+    </section>
+
+</body>
 </html>
