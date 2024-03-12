@@ -31,69 +31,76 @@
 
 
 // my code 
-// let soundIcons = document.querySelectorAll('.sound_icon'),
-// dropZone = document.querySelectorAll('.drop_zone'),
-// draggedIcon;
+let soundIcons = document.querySelectorAll('.sound_icon'),
+dropZone = document.querySelectorAll('.drop_zone'),
+draggedIcon;
 
-// // Functions
-//     function handleStartDrag() { 
-//         console.log('started dragging this icon:', this);
-//         draggedIcon = this;
-//     }
+// Functions
+    function handleStartDrag() { 
+        console.log('started dragging this icon:', this);
+        draggedIcon = this;
+    }
 
-//     function handleDragOver(e) {
-//         e.preventDefault();
-//         console.log('dragged over me'); 
-//     }
+    function handleDragOver(e) {
+        e.preventDefault();
+        console.log('dragged over me'); 
+    }
 
-//     function handleDrop(e) { 
-//         e.preventDefault();
-//         console.log('dropped something on me');
-// //   bug fix required??
+    function handleDrop(e) { 
+        e.preventDefault();
+        console.log('dropped something on me');
+        let iconContainer = this.querySelector('.icon-container');
+        if (!iconContainer) {
+            iconContainer = document.createElement('div');
+            iconContainer.classList.add('icon-container');
+            this.appendChild(iconContainer);
+            iconContainer.appendChild(draggedIcon.cloneNode(true));
+        }}
+//   bug fix required??
+// if(!this.querySelector('img'))this.appendChild(draggedIcon);
 //         this.appendChild(draggedPiece);
-//     }
 
-//     // event listeners
-// soundIcons.forEach(icon => icon.addEventListener('dragstart', handleStartDrag));
+    // event listeners
+soundIcons.forEach(icon => icon.addEventListener('dragstart', handleStartDrag));
 
-// // dragover and the drop event
-// dropZone.forEach(zone => zone.addEventListener("dragover", handleDragOver));
+// dragover and the drop event
+dropZone.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 
-// // drop event handling
-// dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
+// drop event handling
+dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
 
 
 
 // chatgpt code
-let soundIcons = document.querySelectorAll('.sound_icon'),
-    dropZone = document.querySelector('.drop_zone'),
-    draggedIcon;
+// let soundIcons = document.querySelectorAll('.sound_icon'),
+//     dropZone = document.querySelector('.drop_zone'),
+//     draggedIcon;
 
-// Functions
-function handleStartDrag() {
-    console.log('started dragging this icon:', this);
-    draggedIcon = this;
-}
+// // Functions
+// function handleStartDrag() {
+//     console.log('started dragging this icon:', this);
+//     draggedIcon = this;
+// }
 
-function handleDragOver(e) {
-    e.preventDefault();
-    console.log('dragged over me');
-}
+// function handleDragOver(e) {
+//     e.preventDefault();
+//     console.log('dragged over me');
+// }
 
-function handleDrop(e) {
-    e.preventDefault();
-    console.log('dropped something on me');
-    if(!this.querySelector('img'))this.appendChild(draggedIcon);
-    // must fix so new dragged pieces are also added to drop zone
-} 
+// function handleDrop(e) {
+//     e.preventDefault();
+//     console.log('dropped something on me');
+//     if(!this.querySelector('img'))this.appendChild(draggedIcon);
+//     // must fix so new dragged pieces are also added to drop zone
+// } 
 
-// Event listeners
-soundIcons.forEach(icon => {
-    icon.setAttribute('draggable', 'true');
-    icon.addEventListener('dragstart', handleStartDrag);
-});
+// // Event listeners
+// soundIcons.forEach(icon => {
+//     icon.setAttribute('draggable', 'true');
+//     icon.addEventListener('dragstart', handleStartDrag);
+// });
 
-dropZone.addEventListener("dragover", handleDragOver);
-dropZone.addEventListener("drop", handleDrop);
+// dropZone.addEventListener("dragover", handleDragOver);
+// dropZone.addEventListener("drop", handleDrop);
 
 
