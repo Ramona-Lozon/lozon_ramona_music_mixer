@@ -1,23 +1,26 @@
 // my code 
 
 // query selectors
+
 let soundIcons = document.querySelectorAll('.sound_icon'),
-dropZone = document.querySelectorAll('.drop_zone'),
-draggedIcon;
+    dropZone = document.querySelectorAll('.drop_zone'),
+    draggedIcon;
+const resetButton = document.getElementById('resetButton');
+const iconPanel = document.getElementById('icon_panel');
 
 // Functions
 
 // drag item function
-    function handleStartDrag() { 
-        console.log('started dragging this icon:', this);
-        draggedIcon = this;
-    }
+function handleStartDrag() { 
+    console.log('started dragging this icon:', this);
+    draggedIcon = this;
+}
 
 // drag over drop zone function
-    function handleDragOver(e) {
-        e.preventDefault();
-        console.log('dragged over me'); 
-    }
+function handleDragOver(e) {
+    e.preventDefault();
+    console.log('dragged over me'); 
+}
 
 // drop item in container function
 function handleDrop(e) { 
@@ -41,7 +44,19 @@ function handleDrop(e) {
         this.appendChild(draggedIcon);
     }
 }
-    
+
+// Reset Function
+function resetImages() {
+    // Remove all images from drop zone
+    dropZone.forEach(zone => {
+        zone.innerHTML = '';
+    });
+
+    // Append all images back to icon panel
+    soundIcons.forEach(icon => {
+        iconPanel.appendChild(icon);
+    });
+}
 // event listeners!!!
 
 // drag item event listener
@@ -52,3 +67,7 @@ dropZone.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 
 // drop event listener
 dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
+
+// Event listener for reset button
+resetButton.addEventListener('click', resetImages);
+
