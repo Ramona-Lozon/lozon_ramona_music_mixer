@@ -63,6 +63,35 @@ function resetImages() {
 }
 
 
+// audio Functions!!! :D
+function playAudio() {
+    const droppedImage = document.querySelector('.drop_zone img');
+    if (droppedImage) {
+        const trackRef = droppedImage.getAttribute('data-trackref');
+        if (trackRef) {
+            const audioSrc = `assets/sounds/${trackRef}`;
+            dropZoneAudio = new Audio(audioSrc);
+            dropZoneAudio.play();
+        } else {
+            console.error('Data-trackref attribute is missing or empty.');
+        }
+    } else {
+        console.error('No image dropped in the drop zone.');
+    }
+}
+
+// pause Audio Function!!!
+function pauseAudio() {
+}
+
+// Rewind Audio Function!!!
+function restartAudio() {
+}
+
+// Volume Slider Function!!!
+function volSlider() {
+}
+
 // event listeners!!! :D
 
 // drag item event listener
