@@ -1,12 +1,14 @@
 // Query Selectors!!! :D
 
+
 let soundIcons = document.querySelectorAll('.sound_icon'),
     dropZone = document.querySelectorAll('.drop_zone'),
     draggedIcon;
 const resetButton = document.getElementById('resetButton');
 const iconPanel = document.getElementById('icon_panel');
 
-// Functions !!!! :D
+// Drag and Drop Functions !!!! :D
+
 
 // Drag Function
 function handleStartDrag() { 
@@ -24,26 +26,13 @@ function handleDragOver(e) {
 function handleDrop(e) { 
     e.preventDefault();
     console.log('dropped something on me');
-// If there is no image already in the drop zone
     if (!this.querySelector('img')) {
-
-// Clone the dragged icon
         const clonedIcon = draggedIcon.cloneNode(true);
-
-// Remove the original icon from the icon panel
         draggedIcon.parentNode.removeChild(draggedIcon);
-    
-// Append the cloned icon to the drop zone
         this.appendChild(clonedIcon);
     } else {
-        
-// If there is already an image in the drop zone, replace it with the dragged icon
         const existingIcon = this.querySelector('img');
-        
-// Remove the existing icon from the drop zone
         existingIcon.parentNode.removeChild(existingIcon);
-        
-// Append the dragged icon to the drop zone
         this.appendChild(draggedIcon);
     }
 }
@@ -64,35 +53,62 @@ function resetImages() {
 
 
 // audio Functions!!! :D
+
+
+// Play Audio Function
+// function playAudio() {
+//     const droppedImage = document.querySelector('.drop_zone img');
+//     if (droppedImage) {
+//         const trackRef = droppedImage.getAttribute('data-trackref');
+//         if (trackRef) {
+//             const audioSrc = `assets/sounds/${trackRef}`;
+//             dropZoneAudio = new Audio(audioSrc);
+//             dropZoneAudio.play();
+//         } else {
+//             console.error('Data-trackref attribute is missing or empty.');
+//         }
+//     } else {
+//         console.error('No image dropped in the drop zone.');
+//     }
+// }
+
+// Play Audio Function
 function playAudio() {
-    const droppedImage = document.querySelector('.drop_zone img');
-    if (droppedImage) {
-        const trackRef = droppedImage.getAttribute('data-trackref');
-        if (trackRef) {
-            const audioSrc = `assets/sounds/${trackRef}`;
-            dropZoneAudio = new Audio(audioSrc);
-            dropZoneAudio.play();
+    dropZone.forEach(zone => {
+        const droppedImage = zone.querySelector('img');
+        if (droppedImage) {
+            const trackRef = droppedImage.getAttribute('data-trackref');
+            if (trackRef) {
+                const audioSrc = `assets/sounds/${trackRef}`;
+                const audio = new Audio(audioSrc);
+                audio.play();
+            } else {
+                console.error('Data-trackref attribute is missing or empty.');
+            }
         } else {
-            console.error('Data-trackref attribute is missing or empty.');
+            console.error('No image dropped in the drop zone.');
         }
-    } else {
-        console.error('No image dropped in the drop zone.');
-    }
+    });
 }
+
 
 // pause Audio Function!!!
 function pauseAudio() {
+    dropZoneAudio.pause();
 }
+
 
 // Rewind Audio Function!!!
 function restartAudio() {
 }
 
 // Volume Slider Function!!!
-function volSlider() {
+function setVolume() {
 }
 
+
 // event listeners!!! :D
+
 
 // drag item event listener
 soundIcons.forEach(icon => icon.addEventListener('dragstart', handleStartDrag));
