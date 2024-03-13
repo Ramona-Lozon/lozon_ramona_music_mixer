@@ -1,6 +1,4 @@
-// my code 
-
-// query selectors
+// Query Selectors!!! :D
 
 let soundIcons = document.querySelectorAll('.sound_icon'),
     dropZone = document.querySelectorAll('.drop_zone'),
@@ -8,6 +6,7 @@ let soundIcons = document.querySelectorAll('.sound_icon'),
 const resetButton = document.getElementById('resetButton');
 const iconPanel = document.getElementById('icon_panel');
 
+<<<<<<< Updated upstream
 // Audio Query Selectors
 const playButton = document.getElementById('playButton');
 // playButton = document.querySelector('#playButton'),
@@ -17,55 +16,65 @@ volSlider = document.querySelector('#volumeControl'),
 volAmount = document.querySelector('#volumeAmt');
 
 // Drag and Drop Functions!!! :D
+=======
+// Functions !!!! :D
+>>>>>>> Stashed changes
 
-// drag item function
+// Drag Function
 function handleStartDrag() { 
     console.log('started dragging this icon:', this);
     draggedIcon = this;
 }
 
-// drag over drop zone function
+// Drag over Drop Zone Function
 function handleDragOver(e) {
     e.preventDefault();
     console.log('dragged over me'); 
 }
 
-// drop item in container function
+// Drop Function!!!
 function handleDrop(e) { 
     e.preventDefault();
     console.log('dropped something on me');
-
-    // If there is no image already in the drop zone
+// If there is no image already in the drop zone
     if (!this.querySelector('img')) {
-        // Clone the dragged icon
+
+// Clone the dragged icon
         const clonedIcon = draggedIcon.cloneNode(true);
-        // Remove the original icon from the icon panel
+
+// Remove the original icon from the icon panel
         draggedIcon.parentNode.removeChild(draggedIcon);
-        // Append the cloned icon to the drop zone
+    
+// Append the cloned icon to the drop zone
         this.appendChild(clonedIcon);
     } else {
-        // If there is already an image in the drop zone, replace it with the dragged icon
+        
+// If there is already an image in the drop zone, replace it with the dragged icon
         const existingIcon = this.querySelector('img');
-        // Remove the existing icon from the drop zone
+        
+// Remove the existing icon from the drop zone
         existingIcon.parentNode.removeChild(existingIcon);
-        // Append the dragged icon to the drop zone
+        
+// Append the dragged icon to the drop zone
         this.appendChild(draggedIcon);
     }
 }
 
-// Reset Function
+// Reset Function!!!
 function resetImages() {
-    // Remove all images from drop zone
+    
+// Remove all images from drop zone
     dropZone.forEach(zone => {
         zone.innerHTML = '';
     });
 
-    // Append all images back to icon panel
+// Append all images back to icon panel
     soundIcons.forEach(icon => {
         iconPanel.appendChild(icon);
     });
 }
 
+<<<<<<< Updated upstream
 // music finctions!!! :D
 
 // Function to play audio
@@ -107,6 +116,10 @@ function setVolume() {
 }
 
 // event listeners!!!
+=======
+
+// event listeners!!! :D
+>>>>>>> Stashed changes
 
 // drag item event listener
 soundIcons.forEach(icon => icon.addEventListener('dragstart', handleStartDrag));
