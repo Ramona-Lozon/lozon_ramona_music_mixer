@@ -6,19 +6,7 @@ let soundIcons = document.querySelectorAll('.sound_icon'),
 const resetButton = document.getElementById('resetButton');
 const iconPanel = document.getElementById('icon_panel');
 
-<<<<<<< Updated upstream
-// Audio Query Selectors
-const playButton = document.getElementById('playButton');
-// playButton = document.querySelector('#playButton'),
-pauseButton = document.querySelector('#pauseButton'),
-rewindButton = document.querySelector('#rewindButton'),
-volSlider = document.querySelector('#volumeControl'),
-volAmount = document.querySelector('#volumeAmt');
-
-// Drag and Drop Functions!!! :D
-=======
 // Functions !!!! :D
->>>>>>> Stashed changes
 
 // Drag Function
 function handleStartDrag() { 
@@ -74,52 +62,8 @@ function resetImages() {
     });
 }
 
-<<<<<<< Updated upstream
-// music finctions!!! :D
-
-// Function to play audio
-function playAudio() {
-    const droppedImage = document.querySelector('.drop_zone img');
-    if (droppedImage) {
-        const trackRef = droppedImage.getAttribute('data-trackref');
-        if (trackRef) {
-            const audioSrc = `assets/sounds/${trackRef}`;
-            const audio = new Audio(audioSrc);
-            audio.play();
-        } else {
-            console.error('Data-trackref attribute is missing or empty.');
-        }
-    } else {
-        console.error('No image dropped in the drop zone.');
-    }
-}
-
-function restartAudio() {
-    dropZoneAudio.currentTime = 0;
-    playAudio();
-}
-function pauseAudio() {
-    dropZoneAudio.pause();
-}
-
-function displayVolume() {
-    volAmount.innerText = volSlider.value;
-}
-
-displayVolume();
-
-function setVolume() {
-    console.log(this.value);
-    dropZoneAudio.volume = this.value / 100;
-    // need to debug this so that the input slider matches the volume output
-    displayVolume();
-}
-
-// event listeners!!!
-=======
 
 // event listeners!!! :D
->>>>>>> Stashed changes
 
 // drag item event listener
 soundIcons.forEach(icon => icon.addEventListener('dragstart', handleStartDrag));
