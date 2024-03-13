@@ -41,21 +41,49 @@ function handleDrop(e) {
     }
 }
 
+// // Reset Function!!!
+// function resetImages() {
+//     // Remove all images from drop zone
+//     dropZone.forEach(zone => {
+//         zone.innerHTML = '';
+//     });
+
+//     // Append all images back to icon panel
+//     soundIcons.forEach(icon => {
+//         iconPanel.appendChild(icon);
+//     });
+
+//     // Reset the dropZoneAudioList array
+//     dropZoneAudioList.length = 0;
+// }
+
+// test section
+
 // Reset Function!!!
 function resetImages() {
     // Remove all images from drop zone
     dropZone.forEach(zone => {
         zone.innerHTML = '';
     });
-
-    // Append all images back to icon panel
-    soundIcons.forEach(icon => {
-        iconPanel.appendChild(icon);
+        // Append all images back to icon panel
+        soundIcons.forEach(icon => {
+            iconPanel.appendChild(icon);
+        });
+    
+        // Reset the dropZoneAudioList array
+        dropZoneAudioList.length = 0;
+    
+        // Pause all currently playing audio
+        pauseAllAudio();
+    }
+    // Function to pause all audio
+function pauseAllAudio() {
+    dropZoneAudioList.forEach(audio => {
+        audio.pause();
     });
-
-    // Reset the dropZoneAudioList array
-    dropZoneAudioList.length = 0;
 }
+
+// end of test section
 
 // Play Audio Function
 function playAudio() {
@@ -69,10 +97,10 @@ function playAudio() {
                 audio.play();
                 dropZoneAudioList.push(audio); // Store reference to the playing audio
             } else {
-                console.error('Data-trackref attribute is missing or empty.');
+                console.error('no audio found');
             }
         } else {
-            console.error('No image dropped in the drop zone.');
+            console.error('No image in the drop zone.');
         }
     });
 }
