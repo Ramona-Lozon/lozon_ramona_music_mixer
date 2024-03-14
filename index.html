@@ -11,17 +11,68 @@
     <div class="center-container">
     <!-- sound icons -->
 <section id="icon_panel" class="grid-con">
-        <img src="images/crickets-icon.png" id="crickets" class="sound_icon col-start-1 col-end-2" alt="cricket sound icon">
-        <img src="images/fire-icon.png" id="fire" class="sound_icon col-start-2 col-end-3" alt="fire sound icon">
-        <img src="images/frog-icon.png" id="frog" class="sound_icon col-start-3 col-end-4" alt="frog sound icon">
-        <img src="images/rainwater-icon.png" id="rain" class="sound_icon col-start-4 col-end-5" alt="rainwater sound icon">
-        <img src="images/stream-icon.png" id="stream" class="sound_icon col-start-5 col-end-6" alt="stream sound icon">
-        <img src="images/wind-icon.png" id="wind" class="sound_icon col-start-6 col-end-7" alt="wind sound icon">
+        
+    <img src="images/crickets-icon.png" 
+        data-trackref="crickets.mp3"
+        id="crickets" 
+        class="sound_icon col-start-1 col-end-2" 
+        alt="cricket sound icon">
+        
+    <img src="images/fire-icon.png"
+        data-trackref="fire.mp3"
+        id="fire" 
+        class="sound_icon col-start-2 col-end-3" 
+        alt="fire sound icon">
+        
+    <img src="images/frog-icon.png" 
+        data-trackref="frogs.mp3"
+        id="frog" 
+        class="sound_icon col-start-3 col-end-4" 
+        alt="frog sound icon">
+
+    <img src="images/rainwater-icon.png" 
+        data-trackref="rainwater.mp3"
+        id="rain" 
+        class="sound_icon col-start-4 col-end-5" 
+        alt="rainwater sound icon">
+
+    <img src="images/stream-icon.png" 
+        data-trackref="stream.mp3"
+        id="stream" 
+        class="sound_icon col-start-5 col-end-6" 
+        alt="stream sound icon">
+        
+    <img src="images/wind-icon.png" 
+        data-trackref="wind.mp3"
+        id="wind" 
+        class="sound_icon col-start-6 col-end-7" 
+        alt="wind sound icon">
 </section>
 
-    <!-- audio controls & drop zone-->
-    <section class="audio-controls">
-        <div class="drop_zone"></div>
+    <!-- drop zones -->
+    <section class="grid-con" id="drop_zone_panel">
+        <div id="dz1" class="drop_zone col-start-1 col-end-2"></div>
+        <div id="dz2" class="drop_zone col-start-2 col-end-3"></div>
+        <div id="dz3" class="drop_zone col-start-3 col-end-4"></div>
+        <div id="dz4" class="drop_zone col-start-4 col-end-5"></div>
+        <div id="dz5" class="drop_zone col-start-5 col-end-6"></div>
+        <div id="dz6" class="drop_zone col-start-6 col-end-7"></div>
+    </section>
+
+        <!-- audio controls & description -->
+        <section class="grid-con">  
+
+            <div class="description col-start-1 col-end-5">
+                <p>Drag and drop the images into the drop zones!<br>
+                Each image corresponds to a sound you would hear in nature.<br>
+                Press play after adding a new sound to add it to the mix!<br>
+                Press rewind to restart the audio!<br>
+                Press pause to stop the audio from playing!<br>
+                Press reset to stop the audio and move all images back home!<br>
+                The slider at the bottom is used to control the volume!<br>
+                I hope you enjoy! :)</p>
+                </div>
+            <div class="audio-controls col-start-5 col-end-7">
         <h1 class="hidden">Audio Controls</h1>
         <button id="playButton">PLAY</button>
         <button id="pauseButton">PAUSE</button>
@@ -35,6 +86,7 @@
         min="0"
         max="100"
         step="1">
+        </div>
     </section>
 </div>
 
