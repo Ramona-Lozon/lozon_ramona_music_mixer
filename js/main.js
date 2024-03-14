@@ -76,6 +76,7 @@ function playAudio() {
                 const audioSrc = `assets/sounds/${trackRef}`;
                 const audio = new Audio(audioSrc);
                 audio.volume = volSlider.value / 100; // Set initial volume
+                audio.loop = true; // Set loop to true
                 audio.play();
                 dropZoneAudioList.push(audio); // Store reference to the playing audio
             } else {
@@ -86,6 +87,7 @@ function playAudio() {
         }
     });
 }
+
 
 // Pause Audio Function!!!
 function pauseAudio() {
